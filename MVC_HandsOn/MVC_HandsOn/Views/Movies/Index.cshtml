@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVC_HandsOn.Models.Movie>
+    
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Movies</h1>
+@Html.ActionLink("New Movie", "NewMovie", null, new { @class = "btn btn-primary" } )
+<table class="table table-bordered">
+    <tr>
+        <th>Movies</th>
+        <th>Genre</th>
+    </tr>
+    
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>
+                  @Html.ActionLink(@movie.name, "Edit", new { id= @movie.id})
+                </td>
+                <td>
+                    @movie.genre.genreName
+                </td>
+            </tr>
+            
+        }
+    
+</table>
+
+

@@ -1,0 +1,14 @@
+﻿@model MVC_HandsOn.Models.customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+Name:@Model.name<br/>
+@if(@Model.dob!=null)
+{
+   <text> DateOfBirth:</text> @Model.dob;
+}
